@@ -6,6 +6,11 @@ class Program
     {
         Journal journal = new Journal();
 
+        userloop(journal);
+    }
+
+    static void userloop(Journal journal)
+    {
         Console.WriteLine("Options:\n 1. Create Entry\n 2. Delete Entry\n 3. Edit Entry\n 4. Display Entry ");
         String userInput = Console.ReadLine();
         try
@@ -18,7 +23,17 @@ class Program
             }
             else if (userChoice == 2)
             {
-
+                journal.display();
+                Console.WriteLine("Which would you like to delete?: ");
+                userInput = Console.ReadLine();
+                try
+                {
+                    int toDelete = int.Parse(userInput);
+                    journal.deleteEntry(toDelete);
+                }catch{
+                    Console.WriteLine("invaild input");
+                    userloop(journal);
+                }
             }
             else if (userChoice == 3)
             {
@@ -41,7 +56,7 @@ class Program
         string userContinue = Console.ReadLine();
         if (userContinue == "y")
         {
-            Main();
+            userloop(journal);
         }
     }
 }

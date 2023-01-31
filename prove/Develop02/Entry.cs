@@ -1,9 +1,9 @@
 public class Entry
 {
-    string _title = "";
-    string _content = "";
+    public string _title = "";
+    public string _content = "";
 
-    string _date = "";
+    public string _date = "";
 
     public Entry()
     {
