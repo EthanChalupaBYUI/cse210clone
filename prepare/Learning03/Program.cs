@@ -1,7 +1,7 @@
 using System;
 
 // Name: Ethan Chalupa
-// Date: Jan 17 
+// Date: Jan 31
 class Program
 {
     static void Main(string[] args)
