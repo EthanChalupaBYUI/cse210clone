@@ -1,5 +1,5 @@
 using System;
-
+// Just realized WriteLine can be used with text in it
 class Program
 {
     static void Main()

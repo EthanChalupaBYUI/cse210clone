@@ -11,7 +11,7 @@ class Program
 
     static void userloop(Journal journal)
     {
-        Console.WriteLine("Options:\n 1. Create Entry\n 2. Delete Entry\n 3. Edit Entry\n 4. Display Entry ");
+        Console.WriteLine("Options:\n 1. Create Entry\n 2. Delete Entry\n 3. Save journal\n 4. Load journal \n 5. Display Entries \n 6. Exit ");
         String userInput = Console.ReadLine();
         try
         {
@@ -30,18 +30,28 @@ class Program
                 {
                     int toDelete = int.Parse(userInput);
                     journal.deleteEntry(toDelete);
-                }catch{
+                }
+                catch
+                {
                     Console.WriteLine("invaild input");
                     userloop(journal);
                 }
             }
             else if (userChoice == 3)
             {
-
+                journal.saveData();
             }
             else if (userChoice == 4)
             {
-
+                journal.loadData();
+            }
+            else if (userChoice == 5)
+            {
+                journal.display();
+            }
+            else if (userChoice == 6)
+            {
+                Environment.Exit(0);
             }
             else
             {
@@ -59,4 +69,6 @@ class Program
             userloop(journal);
         }
     }
+
+
 }
