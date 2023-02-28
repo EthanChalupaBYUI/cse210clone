@@ -2,9 +2,9 @@ using System;
 
 class Program
 {
-    static void Main(string[] args)
-    {   
-        Console.Write("Menu Options \n  1.Start breathing activity \n  2.Start reflecting activity \n  3.Start listing activity\n");
+    static void Main()
+    {
+        Console.Write("Menu Options \n  1.Start breathing activity \n  2.Start reflecting activity \n  3.Start listing activity\n 4.Quit \n");
         string userInput = Console.ReadLine();
 
         try
@@ -13,20 +13,25 @@ class Program
 
             if (userChoice == 1)
             {
-                Activity activitytest = new Activity();
-                activitytest.getDuration();
+                Breathing breathing = new Breathing();
+                breathing.spinner(3);
+                breathing.main();
             }
             else if (userChoice == 2)
             {
-
+                Reflect reflect = new Reflect();
+                reflect.spinner(3);
+                reflect.main();
             }
             else if (userChoice == 3)
             {
-
+                Listening listening = new Listening();
+                listening.spinner(3);
+                listening.main();
             }
             else if (userChoice == 4)
             {
-                
+
             }
             else
             {
@@ -36,10 +41,8 @@ class Program
         catch
         {
             Console.WriteLine("Invalid Input");
+            Main();
         }
-
-
-        Activity activity = new Activity();
-        activity.spinner(5);
+        Main();
     }
 }
